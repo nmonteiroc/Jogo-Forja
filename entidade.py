@@ -14,7 +14,7 @@ class Entidade:
         self.defendendo = True
         print(f'{self.nome} está se defendendo e reduzirá o próximo dano pela metade')
     
-    def receber_dano(self, dano):
+    def receber_dano(self, dano:int):
         if self.defendendo:
             dano //= 2
             print(f'{self.nome} está se defendendo, dano reduzido para {dano}')

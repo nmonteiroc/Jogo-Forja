@@ -1,11 +1,11 @@
 class GameStudio:
-    def __init__ (self, nome, link):
+    def __init__ (self, nome: str, link: str):
         self.nome = nome
         self.link = link
         self.__jogos = [] #convenção: __ indica privado
         self.__ativo = False # Atributo booleano privado __ativo, inicializado como False
 
-    def adicionar_jogo(self, nome_jogo, esta_lancado):
+    def adicionar_jogo(self, nome_jogo: str, esta_lancado: bool):
         """
         Adiciona um jogo à lista do GameStudio.
         'esta_lancado' deve ser um booleano (True para lançado, False para em desenvolvimento).
@@ -15,7 +15,7 @@ class GameStudio:
         status = "lançado" if esta_lancado else "em desenvolvimento"
         print(f"Jogo '{nome_jogo}' foi adicionado ao GameStudio '{self.nome}' e está {status}.")
         
-    def acessar_jogo(self, nome_jogo):
+    def acessar_jogo(self, nome_jogo: str):
         """
         Acessa e retorna as informações de um jogo específico pelo nome.
         Retorna None se o jogo não for encontrado.
@@ -42,7 +42,7 @@ class GameStudio:
             print(f"- Nome: {jogo['nome']} (Status: {status})")
         print("---Fim da lista de jogos---")
 
-    def set_ativo(self, estado):
+    def set_ativo(self, estado: bool):
         """
         Define o status de ativação do GameStudio.
         'estado' deve ser um booleano (True para ativo, False para inativo).
